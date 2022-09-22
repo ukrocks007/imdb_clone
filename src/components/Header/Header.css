@@ -1,0 +1,34 @@
+#imdb-header {
+    text-align: center;
+    margin: 20px
+}
+
+#logo {
+    float: left;
+    width: 30%;
+}
+
+#logo-img {
+    height: 40px;
+    float: left;
+}
+
+#buttons {
+    float: right;
+    width: 30%;
+}
+
+.headerButtons {
+    float: right;
+    margin: 5px;
+    padding: 10px;
+    font-weight: bolder;
+    border-radius: 15%;
+}
+
+#title {
+    float: left;
+    width: 40%;
+    color: white;
+    font-size:xx-large ;
+}
