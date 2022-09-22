@@ -1,6 +1,30 @@
-# Getting Started with Create React App
+# IMDB Clone
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This App will have 2 views
+1. Client View
+2. Admin View
+
+## Common features
+1. Sign up
+2. Log in
+3. Admin & Normal User roles
+
+## Client View
+
+Client View will have following features
+1. See the list of movies => pagination
+2. Search bar to search movies by keywords
+3. Filter movies by Year, Genre, etc.
+4. Sort movies by Year, Ratings, etc.
+5. Movie details page
+
+## Admin View
+
+Admin page will have following features
+1. Create/Add movies => Upload a list of images
+2. Update movies
+3. Delete movies
+4. User stats
 
 ## Available Scripts
 
