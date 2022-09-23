@@ -1,5 +1,5 @@
 import './Header.css';
-const logoUrl = 'https://upload.wikimedia.org/wikipedia/commons/6/69/IMDB_Logo_2016.svg';
+import { appName, logoUrl, login, signup } from '../../helpers/constants';
 function Header() {
     return (
         <div id='imdb-header'>
@@ -9,17 +9,17 @@ function Header() {
                     alt='IMDB Logo' />
             </div>
             <div id='title'>
-                IMDB Clone
+                {appName}
             </div>
             <div id='buttons'>
                 <input type='button'
                     name="login"
-                    value="Login"
+                    value={login}
                     id="login"
                     className='headerButtons' />
                 <input type='button'
                     name="signup"
-                    value="Signup"
+                    value={signup}
                     id="signup"
                     className='headerButtons' />
             </div>
