@@ -1,14 +1,16 @@
 import MoviesCarousel from '../Carousel/Carousel';
 import './Landing.css';
-
+import LandingTextLabel from '../LandingTextLabel/LandingTextLabel';
+const text = ['Reviews', 'Listings', 'All your favourite movies', 'At one place', 'Welcome To IMDb'];
 function Landing() {
     return (
         <>
-            <div className="margins"></div>
             <div className="movieCarousel">
-            <MoviesCarousel />
+                <MoviesCarousel />
             </div>
-            <div className="margins"></div>
+            { text.map((t) => (
+                <LandingTextLabel text={ t } />
+            )) }
         </>
     );
 }
