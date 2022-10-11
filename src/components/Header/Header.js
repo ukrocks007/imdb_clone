@@ -18,9 +18,9 @@ function Header(props) {
                     id="logout"
                     className='headerButtons' /></div>) : (<div id='buttons'>
                         <input type='button'
-                            name="logout"
-                            value={ logout }
-                            id="logout"
+                            name="login"
+                            value={ login }
+                            id="login"
                             className='headerButtons' />
                         <input type='button'
                             name="signup"
