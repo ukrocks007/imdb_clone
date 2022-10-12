@@ -1,0 +1,37 @@
+.login-container {
+    height: 100%;
+    margin: 10% 30%;
+    padding: 1%;
+    border: 1px solid white;
+}
+div {
+    color: white;
+    text-align: center;
+    font-size: 2vh;
+}
+.login-title {
+    padding: 10px;
+    font-size: 5vh;
+    margin-bottom: 7%;
+}
+.login-form-line {
+    margin: 3%;
+    display: inline-flex;
+    width: 100%;
+}
+.login-label {
+    float: left;
+    width: 30%;
+    text-align: left;
+}
+.login-textbox {
+    float: right;
+    width: 70%;
+}
+#login-button {
+    background-color:transparent; 
+    border-color:white; 
+    color:white;
+    border-width: 1px;
+    padding: 3%;
+}
