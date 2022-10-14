@@ -9,9 +9,10 @@ function Landing(props) {
                 props.isLoggedIn ? (
                     <h1>Welcome</h1>
                 ) :
-                    (<><div className="movieCarousel">
-                        <MoviesCarousel />
-                    </div>
+                    (<>
+                        <div className="movieCarousel">
+                            <MoviesCarousel />
+                        </div>
                         { text.map((t) => (
                             <LandingTextLabel text={ t } />
                         )) }
