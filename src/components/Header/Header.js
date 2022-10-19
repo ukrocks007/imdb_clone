@@ -27,6 +27,7 @@ function Header(props) {
                             name="signup"
                             value={ signup }
                             id="signup"
+                            onClick={props.onSignupClick}
                             className='headerButtons' />
                     </div>) }
         </div>

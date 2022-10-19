@@ -3,6 +3,7 @@ import React from 'react';
 import Header from './components/Header/Header';
 import Landing from './components/Landing/Landing';
 import Login from './components/Login/Login';
+import Signup from './components/Signup/Signup';
 
 class App extends React.Component {
     constructor(props) {
@@ -16,7 +17,15 @@ class App extends React.Component {
 
     showLoginForm = (e) => {
         this.setState({
-            showLogin: true
+            showLogin: true,
+            showSignUp: false,
+        });
+    }
+
+    showSignupForm = () => {
+        this.setState({
+            showSignUp: true,
+            showLogin: false,
         });
     }
 
@@ -33,11 +42,14 @@ class App extends React.Component {
     render() {
         return (
             <div className='App'>
-                <Header isLoggedIn={ this.state.isLoggedIn } onLoginClick={this.showLoginForm} />
+                <Header isLoggedIn={ this.state.isLoggedIn } onLoginClick={ this.showLoginForm }
+                    onSignupClick={ this.showSignupForm } />
                 {
-                    !this.state.showLogin ?
-                        (<Landing isLoggedIn={ this.state.isLoggedIn } />)
-                        : (<Login />)
+                    this.state.showLogin ?
+                        (<Login />)
+                        : this.state.showSignUp ?
+                            (<Signup />) :
+                            (<Landing isLoggedIn={ this.state.isLoggedIn } />)
                 }
             </div>
         )
