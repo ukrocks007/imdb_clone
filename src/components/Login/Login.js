@@ -1,12 +1,33 @@
 import { Component } from 'react';
 import './Login.css';
+import bootstrap from '../../bootstrapData';
 
 export default class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {
             email: '',
-            password: ''
+            password: '',
+            error: '',
+        }
+    }
+    login = () => {
+        this.setState({error: ''})
+        if(this.state.email && this.state.password) {
+            const res = bootstrap.users.login(this.state.email, this.state.password)
+            if(res.success) {
+                this.setState({
+                    error: 'Logged In'
+                });
+            } else {
+                this.setState({
+                    error: res.message
+                });
+            }
+        } else {
+            this.setState({
+                error: "Email and Password are required!"
+            });
         }
     }
     setData = (e) => {
@@ -32,6 +53,9 @@ export default class Login extends Component {
                 </div>
                 <div>
                     <input type="button" onClick={this.login} name='login' id='login-button' value='Login' />
+                </div>
+                <div style={{marginTop: '20px'}}>
+                    {this.state.error}
                 </div>
             </div>
         )
