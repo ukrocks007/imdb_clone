@@ -3,7 +3,7 @@ import { appName, logoUrl, login, signup, logout } from '../../helpers/constants
 function Header(props) {
     return (
         <div id='imdb-header'>
-            <div id='logo'>
+            <div id='logo' onClick={props.onLogoClick}>
                 <img id='logo-img'
                     src={ logoUrl }
                     alt='IMDB Logo' />

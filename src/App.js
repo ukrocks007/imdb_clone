@@ -29,6 +29,13 @@ class App extends React.Component {
         });
     }
 
+    showLanding = () => {
+        this.setState({
+            showSignUp: false,
+            showLogin: false,
+        });
+    }
+
     static getDerivedStateFromProps(props, state) {
         return {
             ...state,
@@ -43,7 +50,7 @@ class App extends React.Component {
         return (
             <div className='App'>
                 <Header isLoggedIn={ this.state.isLoggedIn } onLoginClick={ this.showLoginForm }
-                    onSignupClick={ this.showSignupForm } />
+                    onSignupClick={ this.showSignupForm } onLogoClick={ this.showLanding } />
                 {
                     this.state.showLogin ?
                         (<Login />)
