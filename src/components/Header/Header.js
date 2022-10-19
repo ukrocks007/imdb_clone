@@ -21,6 +21,7 @@ function Header(props) {
                             name="login"
                             value={ login }
                             id="login"
+                            onClick={props.onLoginClick}
                             className='headerButtons' />
                         <input type='button'
                             name="signup"
