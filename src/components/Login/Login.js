@@ -42,17 +42,18 @@ export default class Login extends Component {
                 <div className='login-form-line'>
                     <div className="login-label">Email:</div>
                     <div className="login-textbox">
-                        <input type="email" name="email" onChange={ this.setData } />
+                        <input type="email" name="email" value={this.state.email} onChange={ this.setData } />
                     </div>
                 </div>
                 <div className='login-form-line'>
                     <div className="login-label">Password:</div>
                     <div className="login-textbox">
-                        <input type="password" name="password" onChange={ this.setData } />
+                        <input type="password" name="password" value={this.state.password} onChange={ this.setData } />
                     </div>
                 </div>
                 <div>
-                    <input type="button" onClick={this.login} name='login' id='login-button' value='Login' />
+                    <input type="button" onClick={this.login} name='login' id='login-button' value='Login'
+                    disabled={!this.state.email || !this.state.password} />
                 </div>
                 <div style={{marginTop: '20px'}}>
                     {this.state.error}

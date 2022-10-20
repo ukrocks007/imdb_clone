@@ -67,7 +67,8 @@ export default class Signup extends Component {
                     </div>
                 </div>
                 <div>
-                    <input type="button" onClick={ this.signup } name='signup' id='signup-button' value='Signup' />
+                    <input type="button" onClick={ this.signup } name='signup' id='signup-button' value='Signup'
+                    disabled={!(this.state.firstName && this.state.lastName && this.state.email && this.state.password)}/>
                 </div>
                 <div style={ { marginTop: '20px' } }>
                     { this.state.error }

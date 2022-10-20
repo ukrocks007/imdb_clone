@@ -11,7 +11,7 @@ const users = [{
 }];
 
 const login = (email, password) => {
-    const user = users.filter(u => u.email === email && u.password === password);
+    const user = users.filter(u => u.email === email.toLowerCase() && u.password === password);
     return user.length > 0 ? {
         success: true,
         user: user[0]
@@ -31,7 +31,7 @@ const signup = (firstName, lastName, email, password) => {
             }
         } else {
             users.push({
-                firstName, lastName, email, password
+                firstName, lastName, email: email.toLowerCase(), password
             });
             return {
                 success: true,
