@@ -46,11 +46,79 @@ const signup = (firstName, lastName, email, password) => {
     }
 }
 
+const list = [{
+    id: "f571b2aa-b8d9-4944-a11e-207003dc1b71",
+    rank: 1,
+    name: "The Shawshank Redemption",
+    year: 1994,
+    rating: 9.2,
+    numberOfRatings: 8319470138,
+    yourRating: null,
+    posterUrl: 'https://m.media-amazon.com/images/M/MV5BMDFkYTc0MGEtZmNhMC00ZDIzLWFmNTEtODM1ZmRlYWMwMWFmXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_UY67_CR0,0,45,67_AL_.jpg'
+},{
+    id: "f571b2aa-b8d9-4944-a11e-207003dc1e71",
+    rank: 1,
+    name: " The Godfather",
+    year: 1972,
+    rating: 9.1,
+    numberOfRatings: 831947138,
+    yourRating: null,
+    posterUrl: 'https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UY67_CR1,0,45,67_AL_.jpg'
+},{
+    id: "f571b2aa-b8d9-4944-a11e-207003dc1b71",
+    rank: 1,
+    name: " The Dark Knight",
+    year: 2008,
+    rating: 9.2,
+    numberOfRatings: 8319470138,
+    yourRating: null,
+    posterUrl: 'https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_UY67_CR0,0,45,67_AL_.jpg'
+},{
+    id: "f571b2aa-b8d9-4944-a11e-207003dc1b71",
+    rank: 1,
+    name: "The Shawshank Redemption",
+    year: 1994,
+    rating: 9.2,
+    numberOfRatings: 8319470138,
+    yourRating: null,
+    posterUrl: 'https://m.media-amazon.com/images/M/MV5BMDFkYTc0MGEtZmNhMC00ZDIzLWFmNTEtODM1ZmRlYWMwMWFmXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_UY67_CR0,0,45,67_AL_.jpg'
+},{
+    id: "f571b2aa-b8d9-4944-a11e-207003dc1b71",
+    rank: 1,
+    name: "The Shawshank Redemption",
+    year: 1994,
+    rating: 9.2,
+    numberOfRatings: 8319470138,
+    yourRating: null,
+    posterUrl: 'https://m.media-amazon.com/images/M/MV5BMDFkYTc0MGEtZmNhMC00ZDIzLWFmNTEtODM1ZmRlYWMwMWFmXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_UY67_CR0,0,45,67_AL_.jpg'
+},{
+    id: "f571b2aa-b8d9-4944-a11e-207003dc1b71",
+    rank: 1,
+    name: "The Shawshank Redemption",
+    year: 1994,
+    rating: 9.2,
+    numberOfRatings: 8319470138,
+    yourRating: null,
+    posterUrl: 'https://m.media-amazon.com/images/M/MV5BMDFkYTc0MGEtZmNhMC00ZDIzLWFmNTEtODM1ZmRlYWMwMWFmXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_UY67_CR0,0,45,67_AL_.jpg'
+},{
+    id: "f571b2aa-b8d9-4944-a11e-207003dc1b71",
+    rank: 1,
+    name: "The Shawshank Redemption",
+    year: 1994,
+    rating: 9.2,
+    numberOfRatings: 8319470138,
+    yourRating: null,
+    posterUrl: 'https://m.media-amazon.com/images/M/MV5BMDFkYTc0MGEtZmNhMC00ZDIzLWFmNTEtODM1ZmRlYWMwMWFmXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_UY67_CR0,0,45,67_AL_.jpg'
+}];
+
 const data = {
     users: {
         users,
         login,
         signup
+    },
+    movies: {
+        list
     }
 };
 
