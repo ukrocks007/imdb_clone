@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import './Login.css';
-import bootstrap from '../../bootstrapData';
+import axios from 'axios';
 
 export default class Login extends Component {
     constructor(props) {
@@ -11,19 +11,25 @@ export default class Login extends Component {
             error: '',
         }
     }
-    login = () => {
+    login = async () => {
         this.setState({error: ''})
         if(this.state.email && this.state.password) {
-            const res = bootstrap.users.login(this.state.email, this.state.password)
-            if(res.success) {
-                this.setState({
-                    error: 'Logged In'
-                });
-            } else {
-                this.setState({
-                    error: res.message
-                });
-            }
+            //http://localhost:2323/api/v1/user/login
+            const res = await axios.post('http://localhost:2323/api/v1/user/login', {
+                "email": this.state.email,
+                "password": this.state.password
+            })
+            console.log(res);
+            // const res = bootstrap.users.login(this.state.email, this.state.password)
+            // if(res.success) {
+            //     this.setState({
+            //         error: 'Logged In'
+            //     });
+            // } else {
+            //     this.setState({
+            //         error: res.message
+            //     });
+            // }
         } else {
             this.setState({
                 error: "Email and Password are required!"
