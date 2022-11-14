@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import './Signup.css';
-import bootstrap from '../../bootstrapData';
+import axios from 'axios';
 
 export default class Signup extends Component {
     constructor(props) {
@@ -18,24 +18,44 @@ export default class Signup extends Component {
             [e.target.name]: e.target.value
         });
     }
-    signup = () => {
-        this.setState({ error: '' });
-        const { email, password, firstName, lastName, } = this.state;
-        if (email && password && firstName && lastName) {
-            const res = bootstrap.users.signup(firstName, lastName, email, password);
-            if (res.success) {
-                this.setState({
-                    error: res.message
-                });
+    signup = async () => {
+        try {
+            this.setState({ error: '' });
+            const { email, password, firstName, lastName, } = this.state;
+            if (email && password && firstName && lastName) {
+                const res = await axios.post('http://localhost:2323/api/v1/user/signup', {
+                    email,
+                    password,
+                    firstName,
+                    lastName,
+                })
+                console.log(res);
+                if (res.data.success) {
+                    this.setState({
+                        error: res.data.message
+                    });
+                } else {
+                    this.setState({
+                        error: res.data.message
+                    });
+                }
             } else {
                 this.setState({
-                    error: res.message
+                    error: 'All fields are mandatory!'
                 });
             }
-        } else {
-            this.setState({
-                error: 'All fields are mandatory!'
-            });
+        } catch (ex) {
+            if (ex) {
+                if (ex.response) {
+                    if (ex.response.data) {
+                        if (!ex.response.data.success) {
+                            this.setState({
+                                error: ex.response.data.message
+                            });
+                        }
+                    }
+                }
+            }
         }
     }
     render() {
@@ -68,7 +88,7 @@ export default class Signup extends Component {
                 </div>
                 <div>
                     <input type="button" onClick={ this.signup } name='signup' id='signup-button' value='Signup'
-                    disabled={!(this.state.firstName && this.state.lastName && this.state.email && this.state.password)}/>
+                        disabled={ !(this.state.firstName && this.state.lastName && this.state.email && this.state.password) } />
                 </div>
                 <div style={ { marginTop: '20px' } }>
                     { this.state.error }
